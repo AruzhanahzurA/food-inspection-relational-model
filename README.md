@@ -135,28 +135,20 @@ Example analytical questions supported:
 ---
 
 ##  Repository Structure (Example)
-/diagrams
-
-ER_model.png
-
-/schema
-
-create_tables.sql
-
-/data
-
-synthetic_data.sql
-
-/queries
-
-basic_queries.sql
-advanced_queries.sql
-
-/docs
-
-ER_diagram.png
-proposal.pdf
-presentation.pdf
+.
+├── LICENSE
+├── README.md
+├── data
+│   └── synthetic_data.sql
+├── diagrams
+│   └── ER_model.png
+├── docs
+│   └── Project_proposal.pdf
+├── queries
+│   ├── inspection_enforcement_chain.sql
+│   └── inspection_sequence_tracking.sql
+└── schema
+    └── create_database.sql
 
 ## ▶️ How to Run the Project
 
