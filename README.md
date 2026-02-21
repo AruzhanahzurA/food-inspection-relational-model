@@ -137,16 +137,22 @@ Example analytical questions supported:
 ##  Repository Structure (Example)
 .
 ├── LICENSE
+
 ├── README.md
+
 ├── data
 │   └── synthetic_data.sql
+
 ├── diagrams
 │   └── ER_model.png
+
 ├── docs
 │   └── Project_proposal.pdf
+
 ├── queries
 │   ├── inspection_enforcement_chain.sql
 │   └── inspection_sequence_tracking.sql
+
 └── schema
     └── create_database.sql
 
