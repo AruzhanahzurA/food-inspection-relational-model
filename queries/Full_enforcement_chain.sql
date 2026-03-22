@@ -15,15 +15,15 @@ SELECT
     a.appeal_date,
     a.decision_date,
     a.outcome AS appeal_outcome
-FROM inspection_visit iv
-JOIN establishment e
+FROM project.inspection_visit iv
+JOIN project.establishment e
     ON iv.establishment_id = e.establishment_id
-LEFT JOIN finding f
+LEFT JOIN project.finding f
     ON iv.inspection_id = f.inspection_id
-LEFT JOIN violation v
+LEFT JOIN project.violation v
     ON f.violation_id = v.violation_id
-LEFT JOIN fine fi
+LEFT JOIN project.fine fi
     ON f.finding_id = fi.finding_id
-LEFT JOIN appeal a
+LEFT JOIN project.appeal a
     ON fi.fine_id = a.fine_id
 ORDER BY iv.inspection_date, iv.inspection_id, f.finding_id;

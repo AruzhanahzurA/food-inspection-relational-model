@@ -8,16 +8,16 @@ SELECT
     iv2.inspection_id AS followup_inspection_id,
     iv2.inspection_date AS followup_inspection_date,
     COUNT(f2.finding_id) AS followup_findings_count
-FROM establishment e
-JOIN inspection_visit iv1
+FROM project.establishment e
+JOIN project.inspection_visit iv1
     ON e.establishment_id = iv1.establishment_id
-JOIN finding f1
+JOIN project.finding f1
     ON iv1.inspection_id = f1.inspection_id
-JOIN fine fi
+JOIN project.fine fi
     ON f1.finding_id = fi.finding_id
-JOIN inspection_visit iv2
+JOIN project.inspection_visit iv2
     ON iv2.original_inspection_id = iv1.inspection_id
-LEFT JOIN finding f2
+LEFT JOIN project.finding f2
     ON iv2.inspection_id = f2.inspection_id
 GROUP BY
     e.establishment_id,

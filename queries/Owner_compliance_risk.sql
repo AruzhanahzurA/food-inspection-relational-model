@@ -6,14 +6,14 @@ SELECT
     COUNT(f.finding_id) AS total_findings,
     COUNT(DISTINCT fi.fine_id) AS total_fines,
     ROUND(COUNT(f.finding_id) * 1.0 / NULLIF(COUNT(DISTINCT iv.inspection_id), 0), 2) AS findings_per_inspection
-FROM ownership o
-JOIN establishment e
+FROM project.ownership o
+JOIN project.establishment e
     ON o.ownership_id = e.ownership_id
-LEFT JOIN inspection_visit iv
+LEFT JOIN project.inspection_visit iv
     ON e.establishment_id = iv.establishment_id
-LEFT JOIN finding f
+LEFT JOIN project.finding f
     ON iv.inspection_id = f.inspection_id
-LEFT JOIN fine fi
+LEFT JOIN project.fine fi
     ON f.finding_id = fi.finding_id
 GROUP BY
     o.owner_name,
